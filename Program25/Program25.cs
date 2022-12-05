@@ -1,13 +1,21 @@
-﻿Console.WriteLine("Введите число А:");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число B:");
-int b = Convert.ToInt32(Console.ReadLine());
-ToDegree(a, b);
-void ToDegree(int a, int b)
+﻿internal class Program
 {
-    double result = 1;
+    private static void Main(string[] args)
     {
-        result = result * Math.Pow(a, b);
+        Console.WriteLine("Введите число А:");
+        int a = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите число B:");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        void ToDegree(int a, int b)
+        {
+            int result = 1;
+            for (int i = 1; i <= b; i++)
+            {
+                result = result * a;
+            }
+            Console.WriteLine($"{a}^{b}={result}");
+        }
+        ToDegree(a, b);
     }
-    Console.WriteLine($"{a}^{b}={result}");
 }
